@@ -1,0 +1,226 @@
+/*  
+Thanks to: Usama Tahir
+https://medium.com/@AmJustSam
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+.body {
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    background: #cfccccde;
+}
+/* CSS which you need for blurred box */
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top;
+    background-image: url(bg.jpg);
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+.blurred-box {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    top: calc(50% - 175px);
+    left: calc(50% - 125px);
+    background: inherit;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.blurred-box:after {
+    content: "";
+    width: 300px;
+    height: 300px;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    /* right: 0; */
+    top: -25px;
+    /* top position bottom: 0; */
+    box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.05);
+    filter: blur(10px);
+}
+
+/* Form which you dont need */
+.user-login-box {
+    position: relative;
+    margin-top: 50px;
+    text-align: center;
+    z-index: 1;
+}
+
+.user-login-box > * {
+    display: inline-block;
+    width: 200px;
+}
+
+.user-icon {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=626&ext=jpg&ga=GA1.1.552876676.1663661881&semt=sph);
+}
+
+.user-icon-two {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(https://img.freepik.com/free-photo/cartoon-character-with-handbag-sunglasses_71767-99.jpg?size=626&ext=jpg&ga=GA1.1.552876676.1663661881&semt=sph);
+}
+
+.user-icon-ai {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-size: contain;
+    background-image: url(https://img.freepik.com/free-vector/cartoon-style-robot-vectorart_78370-4103.jpg?w=740&t=st=1709388295~exp=1709388895~hmac=0815b1ac9588e627a0c74566325347a530e70444449dbd1b6ad7775f1a40888b);
+}
+
+.user-name {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+input.user-password {
+    width: 70%;
+    height: 18px;
+    opacity: 0.4;
+    border-radius: 10px;
+    padding: 5px 15px;
+    border: none;
+    outline: none;
+}
+
+.btnOne {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #212121;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btnTwo {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #eee;
+    z-index: 1;
+    background: #212121;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.btnTwo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #eee;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.btnOne::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+}
+
+.btnOne:hover {
+    color: #e8e8e8;
+}
+
+.btnTwo:hover {
+    color: #212121;
+}
+
+button:hover::before,
+.btnTwo:hover:before {
+    width: 100%;
+}
+
+.start {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    /* font-weight: 600; */
+    font-family: "Poppins", sans-serif;
+    margin: 0.8rem 0;
+    cursor: pointer;
+}
+
+.start::before {
+    margin-left: auto;
+}
+
+.start::after,
+.start::before {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    transition: 0.5s;
+}
+
+.start:hover::after,
+.start:hover::before {
+    width: 100%;
+}
